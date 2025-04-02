@@ -10,10 +10,10 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <h1>
-        Victor Dominguez Rodriguez 44939671V
-        HADA 2024/2025
-    </h1>
+    <div class="header">
+        <div>Victor Dominguez Rodriguez 44939671V</div>
+        <h1>HADA P3-CURSO 2024/25 </h1>
+    </div> 
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
