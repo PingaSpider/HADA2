@@ -11,7 +11,16 @@ namespace library
 
         public CADProduct()
         {
-            constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+            try
+            {
+                constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+            }
+            catch (Exception ex)
+            {
+                // Fallback en caso de error
+                constring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+                Console.WriteLine("Error getting connection string: " + ex.Message);
+            }
         }
 
         public bool Create(ENProduct en)
